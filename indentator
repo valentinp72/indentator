@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if (test $# -gt 0) then
+	echo "Usage: $0"
+	echo "  > Edit all files .c and .h (recursively) to match with your .clang-format config file."
+	echo "  > It cannot be runned in / or in ~"
+	exit
+fi
+
+
+if (test $PWD == "/" -o $PWD == $HOME) then
+	echo "As this program is recursive, you cannot run it in the root directory, neither in your home."
+	exit
+fi
+
+
+find . -name '*.[ch]' -print | xargs clang-format -i -style=file
