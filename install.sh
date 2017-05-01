@@ -45,6 +45,8 @@ else
 	echo -n "   ..."
 
 	ln -s ~/git/indentator/.clang-format ~/.clang-format
+#	echo "export PATH=\"\$PATH:\$HOME/git/indentator\"" >> ~/.bashrc
+	ln -s ~/git/indentator/indentator /usr/local/bin/indentator
 
 	echo " ... Done"
 
